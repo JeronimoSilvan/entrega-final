@@ -66,8 +66,6 @@ function mostrarProductos() {
 
 mostrarProductos();
 
-//actualizarBotonesEliminar();
-
 function actualizarBotonesEliminar() {
     botonesEliminar = document.querySelectorAll(".carrito-eliminar");
 
@@ -94,6 +92,11 @@ function vaciarCarrito() {
     localStorage.setItem("productos-carrito", JSON.stringify(productosCarrito));
     mostrarProductos();
 
+    carritoVacio.classList.remove("disabled");
+    carritoContenedor.classList.add("disabled");
+    carritoAcciones.classList.add("disabled");
+    carritoComprado.classList.add("disabled");
+
 }
 
 function totalPagar() {
@@ -103,7 +106,7 @@ function totalPagar() {
 
 
 botonComprar.addEventListener("click", vaciarCarrito)
-function vaciarCarrito() {
+function botonComprar() {
 
     productosCarrito.length = 0;
     localStorage.setItem("productos-carrito", JSON.stringify(productosCarrito));
