@@ -1,0 +1,245 @@
+/* Estilos generales */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Onest', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    background-image: url(../img/fondo.jfif);
+}
+
+/* Menu */
+
+aside {
+    padding: 2rem;
+    padding-right: 0;
+    color: black;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo {
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.boton-menu {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 0;
+    color: black;
+    cursor: pointer;
+    font-weight: 600;
+    gap: 1rem;
+    width: 100%;
+}
+
+.boton-menu.active {
+    background-image: url(../img/fondo2.jfif);
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    color: whitesmoke;
+    width: 100%;
+    position: relative;
+}
+
+.boton-carrito {
+    margin-top: 2rem;
+}
+
+/* Productos */
+
+main {
+    background-image: url(../img/fondo2.jfif);
+    color: whitesmoke;
+    margin: 1rem;
+    margin-left: 0;
+    border-radius: 3rem;
+    padding: 3rem;
+}
+
+.titulo-principal {
+    margin-bottom: 2rem;
+}
+
+.container-producto {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+}
+
+
+
+.img-producto {
+    height: auto;
+    max-width: 100%;
+    border-radius: 1rem;
+}
+
+.detalles-producto {
+    background-image: url(../img/fondo.jfif);
+    color: black;
+    padding: .5rem;
+    border-radius: 1rem;
+    margin-top: -2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.nombre-producto {
+    font-size: 1rem;
+}
+
+.boton-agregar {
+    color: whitesmoke;
+    border: 0;
+    background-image: url(../img/fondo2.jfif);
+    padding: .6rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    text-transform: uppercase;
+}
+
+.boton-agregar:hover {
+    transform: scale(1.05);
+    transition: all 0.5s;
+}
+
+/* CARRITO */
+
+.vacio, .comprado {
+    display: ;
+}
+
+.container-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.carrito-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.carrito-producto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url(../img/fondo.jfif);
+    color: black;
+    border-radius: .5rem;
+    padding: .5rem;
+    padding-right: 1rem;
+}
+
+.carrito-img {
+    width: 3rem;
+    border-radius: .5rem;
+}
+
+.carrito-producto small {
+    font-size: 1rem;
+}
+
+.carrito-eliminar {
+    border: 0;
+    background-color: transparent;
+    color: black;
+    font-size: 1.2rem;
+    cursor: pointer;
+
+}
+
+.carrito-acciones {
+    display: flex;
+    justify-content: space-between;
+}
+
+.acciones-der {
+    display: flex;
+}
+
+.acciones-total {
+    display: flex;
+    color: whitesmoke;
+    padding: 1rem;
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    gap: .5rem;
+}
+
+.acciones-vaciar {
+    border: 0;
+    background-image: url(../img/fondo.jfif);
+    color: black;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: .5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.acciones-vaciar:hover {
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+.acciones-comprar {
+    border: 0;
+    background-image: url(../img/fondo.jfif);
+    color: black;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    text-transform: uppercase;
+}
+
+.acciones-comprar:hover {
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+.disabled {
+    display: none;
+}
+
+/* Footer */
+
+footer {
+    color: rgb(0, 119, 158);
+    font-size: 1rem;
+}
