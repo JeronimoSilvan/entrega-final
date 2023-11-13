@@ -103,3 +103,18 @@ function totalPagar() {
 }
 
 
+botonComprar.addEventListener("click", comprarCarrito)
+function comprarCarrito() {
+
+    productosCarrito.length = 0;
+    localStorage.setItem("productos-carrito", JSON.stringify(productosCarrito));
+    
+    carritoVacio.classList.add("disabled");
+    carritoContenedor.classList.add("disabled");
+    carritoAcciones.classList.add("disabled");
+    carritoComprado.classList.remove("disabled");
+
+
+}
+
+
