@@ -1,163 +1,10 @@
-// Productos
-
-//Camisas
-
-const productos = [
-    {
-        id: "camisa-1",
-        titulo: "Camisa 1",
-        imagen: "./img/camisa1.jpg",
-        categoria: {
-            nombre: "Camisas",
-            id: "camisas"
-        },
-        precio: 7000
-    },
-    {
-        id: "camisa-2",
-        titulo: "Camisa 2",
-        imagen: "./img/camisa2.jpg",
-        categoria: {
-            nombre: "Camisass",
-            id: "camisas"
-        },
-        precio: 7000
-    },
-    {
-        id: "camisa-3",
-        titulo: "Camisa 3",
-        imagen: "./img/camisa3.jpg",
-        categoria: {
-            nombre: "Camisas",
-            id: "camisas"
-        },
-        precio: 7000
-    },
-    {
-        id: "camisa-4",
-        titulo: "Camisa 4",
-        imagen: "./img/camisa4.jpg",
-        categoria: {
-            nombre: "Camisas",
-            id: "camisas"
-        },
-        precio: 7000
-    },
-    {
-        id: "camisa-5",
-        titulo: "Camisa 5",
-        imagen: "./img/camisa5.jpg",
-        categoria: {
-            nombre: "Camisas",
-            id: "camisas"
-        },
-        precio: 7000
-    },
-
-    // Pantalones
-    {
-        id: "pantalon-1",
-        titulo: "Pantalon 1",
-        imagen: "./img/cargo1.jpg",
-        categoria: {
-            nombre: "Pantalones",
-            id: "pantalones"
-        },
-        precio: 7000
-    },
-    {
-        id: "pantalon-2",
-        titulo: "Pantalon 2",
-        imagen: "./img/cargo2.jpg",
-        categoria: {
-            nombre: "Pantalones",
-            id: "pantalones"
-        },
-        precio: 7000
-    },
-    {
-        id: "pantalon-3",
-        titulo: "Pantalon 3",
-        imagen: "./img/cargo3.jpg",
-        categoria: {
-            nombre: "Pantalones",
-            id: "pantalones"
-        },
-        precio: 7000
-    },
-    {
-        id: "pantalon-4",
-        titulo: "Pantalon 4",
-        imagen: "./img/cargo4.jpg",
-        categoria: {
-            nombre: "Pantalones",
-            id: "pantalones"
-        },
-        precio: 7000
-    },
-    {
-        id: "pantalon-5",
-        titulo: "Pantalon 5",
-        imagen: "./img/cargo5.jpg",
-        categoria: {
-            nombre: "Pantalones",
-            id: "pantalones"
-        },
-        precio: 7000
-    },
-    // Zapatillas
-    {
-        id: "zapatillas-1",
-        titulo: "Zapatillas 1",
-        imagen: "./img/zapatillas1.jpg",
-        categoria: {
-            nombre: "Zapatillas",
-            id: "zapatillas"
-        },
-        precio: 10000
-    },
-    {
-        id: "zapatillas-2",
-        titulo: "Zapatillas 2",
-        imagen: "./img/zapatillas2.jpg",
-        categoria: {
-            nombre: "Zapatillas",
-            id: "zapatillas"
-        },
-        precio: 10000
-    },
-    {
-        id: "zapatillas-3",
-        titulo: "Zapatillas 3",
-        imagen: "./img/zapatillas3.jpg",
-        categoria: {
-            nombre: "Zapatillas",
-            id: "zapatillas"
-        },
-        precio: 10000
-    },
-    {
-        id: "zapatillas-4",
-        titulo: "Zapatillas 4",
-        imagen: "./img/zapatillas4.jpg",
-        categoria: {
-            nombre: "Zapatillas",
-            id: "zapatillas"
-        },
-        precio: 10000
-    },
-    {
-        id: "zapatillas-5",
-        titulo: "Zapatillas 5",
-        imagen: "./img/zapatillas5.jpg",
-        categoria: {
-            nombre: "Zapatillas",
-            id: "zapatillas"
-        },
-        precio: 10000
-    },
-];
-
+let productos = [];
+fetch("./js/productos.json")
+    .then(response => response.json())
+    .then(data => {
+        productos = data;
+        mostrarProductos(productos);
+    })
 
 const contenedorProductos = document.querySelector("#container-productos");
 const botonesCategorias = document.querySelectorAll(".categoria");
@@ -234,6 +81,21 @@ if(productosCarritoLS) {
 }
 
 function agregarCarrito(e) {
+    Toastify({
+        text: "Producto en carrito",
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #165C90, #70CCCD)",
+          borderRadius: "2rem",
+          fontSize: ".90rem",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
+
     const idBoton = e.currentTarget.id;
     const productoAgregado = productos.find(producto => producto.id === idBoton);
 
